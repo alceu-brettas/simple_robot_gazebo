@@ -1,0 +1,28 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/opt/ros/noetic/include/**",
+        "/home/alceu/catkin_ws/devel/include/**",
+        "/home/alceu/ros_ws/src/Mark2_ros/cores_simbolos/include/**",
+        "/home/alceu/ros_ws/src/Mark2_ros/daq1/include/**",
+        "/home/alceu/ros_ws/src/Mark2_ros/daq2/include/**",
+        "/home/alceu/catkin_ws/src/geographic_info/geodesy/include/**",
+        "/home/alceu/ros_ws/src/Mark2_ros/mark2/include/**",
+        "/home/alceu/catkin_ws/src/realsense_gazebo_plugin/include/**",
+        "/home/alceu/catkin_ws/src/sjtu-drone/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}

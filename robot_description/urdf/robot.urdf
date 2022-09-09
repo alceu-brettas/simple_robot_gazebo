@@ -1,0 +1,196 @@
+<?xml version="1.0" ?>
+<robot name="robot">
+  <link name="chassis">
+    <pose>0 0 0.1 0 0 0</pose>
+
+    <inertial>
+      <mass value="5"/>
+      <origin rpy="0 0 0" xyz="0 0 0.1"/>
+      <inertia ixx="0.0395416666667" ixy="0" ixz="0"
+      iyy="0.106208333333" iyz="0" izz="0.106208333333"/>
+    </inertial>
+
+    <collision>
+      <geometry>
+        <box size="1.5 0.9 0.07"/>
+        <mesh filename="package://robot_description/meshes/trikas.jpeg" />
+      </geometry>
+    </collision>
+
+
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="1.5 0.9 0.07"/>
+      </geometry>
+    </visual>
+  </link>
+
+<link name="right_back_wheel">
+  <inertial>
+    <mass value="0.2"/>
+    <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    <inertia ixx="0.000526666666667" ixy="0" ixz="0" iyy="0.000526666666667" iyz="0" izz="0.001"/>
+  </inertial>
+  <collision>
+    <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    <geometry>
+      <cylinder length="0.04" radius="0.1"/>
+    </geometry>
+  </collision>
+  <visual>
+    <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    <geometry>
+      <cylinder length="0.04" radius="0.1"/>
+    </geometry>
+  </visual>
+</link>
+
+<joint name="joint_right_back_wheel" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.45 -0.45 0"/>
+  <child link="right_back_wheel"/>
+  <parent link="chassis"/>
+  <axis rpy="0 0 0" xyz="0 1 0"/>
+  <limit effort="10000" velocity="1000"/>
+  <joint_properties damping="1.0" friction="1.0"/>
+</joint>
+
+<link name="left_back_wheel">
+  <inertial>
+    <mass value="0.2"/>
+    <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    <inertia ixx="0.000526666666667" ixy="0" ixz="0" iyy="0.000526666666667" iyz="0" izz="0.001"/>
+  </inertial>
+  <collision>
+    <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    <geometry>
+      <cylinder length="0.04" radius="0.1"/>
+    </geometry>
+  </collision>
+  <visual>
+    <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    <geometry>
+      <cylinder length="0.04" radius="0.1"/>
+    </geometry>
+  </visual>
+</link>
+
+<joint name="joint_left_back_wheel" type="continuous">
+  <origin rpy="0 0 0" xyz="-0.45 0.45 0"/>
+  <child link="left_back_wheel"/>
+  <parent link="chassis"/>
+  <axis rpy="0 0 0" xyz="0 1 0"/>
+  <limit effort="10000" velocity="1000"/>
+  <joint_properties damping="1.0" friction="1.0"/>
+</joint>
+
+
+<link name="right_front_wheel">
+  <inertial>
+    <mass value="0.2"/>
+    <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    <inertia ixx="0.000526666666667" ixy="0" ixz="0" iyy="0.000526666666667" iyz="0" izz="0.001"/>
+  </inertial>
+  <collision>
+    <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    <geometry>
+      <cylinder length="0.04" radius="0.1"/>
+    </geometry>
+  </collision>
+  <visual>
+    <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    <geometry>
+      <cylinder length="0.04" radius="0.1"/>
+    </geometry>
+  </visual>
+</link>
+
+<joint name="joint_right_front_wheel" type="continuous">
+  <origin rpy="0 0 0" xyz="0.45 -0.45 0"/>
+  <child link="right_front_wheel"/>
+  <parent link="chassis"/>
+  <axis rpy="0 0 0" xyz="0 1 0"/>
+  <limit effort="10000" velocity="1000"/>
+  <joint_properties damping="1.0" friction="1.0"/>
+</joint>
+
+<link name="left_front_wheel">
+  <inertial>
+    <mass value="0.2"/>
+    <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    <inertia ixx="0.000526666666667" ixy="0" ixz="0" iyy="0.000526666666667" iyz="0" izz="0.001"/>
+  </inertial>
+  <collision>
+    <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    <geometry>
+      <cylinder length="0.04" radius="0.1"/>
+    </geometry>
+  </collision>
+  <visual>
+    <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    <geometry>
+      <cylinder length="0.04" radius="0.1"/>
+    </geometry>
+  </visual>
+</link>
+
+<joint name="joint_left_front_wheel" type="continuous">
+  <origin rpy="0 0 0" xyz="0.45 0.45 0"/>
+  <child link="left_front_wheel"/>
+  <parent link="chassis"/>
+  <axis rpy="0 0 0" xyz="0 1 0"/>
+  <limit effort="10000" velocity="1000"/>
+  <joint_properties damping="1.0" friction="1.0"/>
+</joint>
+
+<link name="mark2">
+    <inertial>
+      <origin
+        xyz="-0.015753 0.016964 -0.012343"
+        rpy="0 0 0" />
+      <mass
+        value="1.3619" />
+      <inertia
+        ixx="0.0062425"
+        ixy="-6.4951E-06"
+        ixz="2.029E-07"
+        iyy="0.005561"
+        iyz="-3.8208E-07"
+        izz="0.010065" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 -1.570796327" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/Mark_2.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.11765 0.11765 0.11765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="-1.570796327 0 -1.570796327" />
+      <geometry>
+        <mesh
+          filename="package://robot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+</link>
+
+<joint name="joint_mark2" type="fixed">
+  <origin rpy="0 0 0" xyz="0 0 0.3"/>
+  <child link="mark2"/>
+  <parent link="chassis"/>
+  <axis rpy="0 0 0" xyz="0 1 0"/>
+  <limit effort="10000" velocity="1000"/>
+  <joint_properties damping="1.0" friction="1.0"/>
+</joint>
+
+</robot>
